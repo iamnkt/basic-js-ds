@@ -18,9 +18,11 @@ class Queue {
     this.first = null;
     this.last = null;
   }
+
   getUnderlyingList(firstItem = this.first) {
     return ({value:firstItem.value, next:firstItem.next != null ? this.getUnderlyingList(firstItem.next) : null});
   }
+
   enqueue(value) {
     if (this.first === null) {
       this.first = new ListNode();
